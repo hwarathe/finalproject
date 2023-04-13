@@ -35,10 +35,47 @@ html,body{
 }
 #nav h3{
     font-family: "america";
-    font-size: 12px;
+    position: relative;
+    font-size: 25px;
     text-transform: uppercase;
-    color: #df6711;
+    color: #e3660d;
+    cursor: pointer;
+    transition: all ease 0.2s;
 }
+
+h3::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    background-color: #e3660d;
+}
+
+@keyframes anime {
+    0%{
+        left: 0;
+        width: 0;
+    }
+    50%{
+        left: 0;
+        width: 100%;
+    }
+    100%{
+        left: 100%;
+        width: 0;
+    }
+}
+
+h3:hover::after{
+    animation-name: anime;
+    animation-duration: 1s;
+}
+h3:hover{
+    opacity: 1;
+}
+
 
 .page1{
    height: 100vh;
@@ -54,7 +91,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    z-index: 99;
+    z-index: 999;
 }
 .page1 h1{
     font-size: 14.5vw;
@@ -76,14 +113,15 @@ html,body{
     font-weight: 500;
     left: 2.7w;
 }
-/* .page1 h1::after{
+
+#page1 h1::after{
     content: "marketing and selling texas ranches";
     position: absolute;
+    font-size: 1vw;
     font-family: gilroy;
-    font-weight: 1vw;
     font-weight: 500;
-    right: 2.7w;
-} */
+    right: 2.7vw;
+}
 #overlay{
     height: 100%;
     width: 100%;
@@ -102,29 +140,87 @@ html,body{
     transition: all ease-out 0.3s;
 }
 .page2{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 5px 0px;
     position: relative;
 }
 .page2 h1{
     font-size: 13vw;
-    font-family: america-b;
-    top: 50%;
-    left: 50%;
-    align-items: center;
-    justify-content: space-between;
-    /* transform: translate(-50%,-50%); */
-    word-spacing: 9.7vw;
-    padding: 50px 100px;
-    line-height: 13vw;
+    line-height: 9.7vw;
+    word-spacing: -16px;
+    letter-spacing: -4px;
     text-align: center;
+    background-image: url(https://cdn.sanity.io/images/sjvffa0f/production/217c65c6aa3412acac7b3d2fa8adc9020e487780-2724x1936.jpg/map.jpg?rect=1,0,2723,1936&w=640&h=455&auto=format);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    padding: 100px 100px;
+    color: #111;
+    position: relative;
+    background-color: #fff;
+    font-family: america-b;
+    /* font-size: 13vw;
+    text-align: center;
+    padding: 100px 100px;
+    color: #111;
+    position: relative;
+    background-color: #fff;
+    background-image: url(https://cdn.sanity.io/images/sjvffa0f/production/217c65c6aa3412acac7b3d2fa8adc9020e487780-2724x1936.jpg/map.jpg?rect=1,0,2723,1936&w=1024&h=728&auto=format);
+    background-position: 0% 1200%;
+    background-repeat: no-repeat;
+    font-family: america-b; */
 
+}
+page2 h1::before{
+    content: "THE REPRESENTATION YOU DESERVE";
+    position: absolute;
+    bottom: 10%;
+    font-size: 1.1vw;
+    width: 13%;
+    text-align: left;
+    line-height: 1.3vw;
+    font-family: gilroy;
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    font-weight: 500;
+
+}
+
+.page2 h1::after{
+    content: "ONE OF AMERICA’S BEST BROKERAGES";
+    position: absolute;
+    bottom: 10%;
+    font-size: 1.1vw;
+    width: 13%;
+    right: 10%;
+    text-align: right;
+    line-height: 1.3vw;
+    font-family: gilroy;
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    font-weight: 500;
+
+}
+.page2 img{
+    height: 800px;
+    left: 50%;
+    transform: translate(-50%,0);
+    top:75%;
+    position: absolute;
+    rotate: -5deg;
+}
+.page2 h2{
+    position: absolute;
+    font-size: 13vw;
+    top: 165%;
+    line-height: 9.7vw;
+    word-spacing: -6px;
+    letter-spacing: 4px;
+    text-align: center;
+    font-family: america-b;
 }
 .page3{
     height: 100vh;
     width: 100%;
-    background-color: #fff;
-    position: relative;
 }
